@@ -12,6 +12,18 @@ fn main() {
         display_neutron_flow(polarity);
     }
     display_neutron_flow(polarity);
+    {
+        let x = 123; //(1)
+        {
+            //(2)
+            let mut x = x as f32; //(3)
+            x *= 2.0; //(4)
+            println!("x = {}", x); //(5)
+        } //(6)
+        println!("x = {}", x); //(7)
+    }
 }
 // Neutron Flow is reversed
 // Neutron Flow is normal
+// x = 246
+// x = 123
